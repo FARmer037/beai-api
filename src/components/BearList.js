@@ -4,7 +4,7 @@ import './BearList.css';
 import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux'
 
-const BearList = props => {
+const BearList = () => {
 
     const bears = useSelector(state => state.bear);
     const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const BearList = props => {
             {
                 bears.map((bear, index) => (
                     <div key={index} style={{ margin: 5 }}>
-                        <BearCard  {...bear} updateBear={() => props.updateBear(bear.id)} deleteBear={() => props.deleteBear(bear.id)} />
+                        <BearCard  {...bear} />
                     </div>
                 ))
             }
